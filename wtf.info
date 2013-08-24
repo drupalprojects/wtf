@@ -1,0 +1,5 @@
+name = What's The Feature?
+description = Lists components with what feature they are associated with.
+core = 7.x
+package = Features
+dependencies[] = features

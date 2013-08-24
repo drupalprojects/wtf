@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implementation of hook_theme().
+ */
+function wtf_theme() {
+  return array(
+    'wtf_report_table' => array(
+      'render element' => 'form',
+      'file' => 'wtf.theme.inc',
+    ),
+    'wtf_report_tabs' => array(
+      'render element' => 'form',
+      'file' => 'wtf.theme.inc'
+    )
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function wtf_menu() {
+  $items = array();
+  $items['admin/reports/wtf'] = array(
+    'title' => 'What\'s The Feature?',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('wtf_admin_components_form'),
+    'access arguments' => array('administer features'),
+    'file' => 'wtf.admin.inc'
+  );
+  return $items;
+}
